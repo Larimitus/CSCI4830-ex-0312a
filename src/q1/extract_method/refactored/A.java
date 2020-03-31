@@ -4,35 +4,35 @@ import java.util.List;
 
 public class A {
    Node m1(List<Node> nodes, String p) {
-      // TODO: Your answer
+	  extractedMethod(nodes, p);
       // other implementation
       return null;
    }
 
    Edge m2(List<Edge> edgeList, String p) {
-      // TODO: Your answer
+	  extractedMethod(edgeList, p);
       // other implementation
       return null;
    }
 
-   // TODO: Your answer
-   // ? extractedMethod(?) {
-   //
-   // }
+   @SuppressWarnings({ "unchecked", "rawtypes" })
+   void extractedMethod(List listOfType, String p) {
+	   for (GraphType typeObj : (List<GraphType>) listOfType) {
+		   if (typeObj.contains(p)) {
+			   System.out.println(typeObj);
+		   }
+	   }
+   }
 }
 
-class Node {
-   String name;
-
-   public boolean contains(String p) {
+class GraphType {
+	String name;
+	
+	public boolean contains(String p) {
       return name.contains(p);
    }
 }
 
-class Edge {
-   String name;
+class Node extends GraphType { }
 
-   public boolean contains(String p) {
-       return name.contains(p);
-   }
-}
+class Edge extends GraphType { }	
